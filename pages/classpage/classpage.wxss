@@ -1,0 +1,119 @@
+/* pages/classpage/classpage.wxss */
+.nonews{
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  color:rgb(141, 139, 139);
+  animation:show 4s cubic-bezier(0.19, 1, 0.22, 1) ;
+}
+
+@keyframes show{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.top{
+
+  height: 80rpx;
+  width: 100%;
+  margin-top: 0;
+
+  display: flex;
+  justify-content: space-around;
+  font-size: 32rpx;
+  color: #666;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  box-sizing: border-box;
+}
+
+.tab{
+  padding: 15rpx;
+  box-sizing: border-box;
+}
+.tab.active{
+  border-bottom: 5rpx solid #409eff;
+}
+
+.des{
+  background-color:white;
+  border-radius: 9px; 
+  margin: 5px;
+  padding: 5px;
+  animation:riseshow 3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.spages{
+   width:100%;
+   height:calc(100vh - 80rpx);
+}
+
+.scroll{
+  height: calc(100vh - 80rpx);
+}
+.boxx{
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.listview{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  width: 90%;
+  margin-bottom: 10rpx;
+  border-radius: 3px;
+  box-shadow: 1px 2px 3px rgb(172, 172, 172);
+  padding: 0 30rpx;
+  color: white;
+
+  animation:riseshow 3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.listview.has{
+  background:#41cdb3;
+}
+
+.listview.no{
+  background: #ff9900;
+}
+
+@keyframes riseshow{
+  0%{opacity: 0;transform: translate3d(0,10vh,0);}
+  100%{opacity: 1;transform: translate3d(0,0,0);}
+}
+
+.hasreadicon{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 50rpx;
+  width: 50rpx;
+  
+  color: white;
+  font-weight: 900;
+  border-radius: 50%;
+  border:2px solid white;
+  
+
+}
+.bord{
+  width: 80rpx;
+  border-right: 1px solid #fff;
+}
+.noreadicon{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+  width: 60rpx;
+  background: #c60151;
+  color: white;
+  font-weight: 900;
+  border-radius: 50%;
+  box-shadow: 1px 2px 3px rgb(36, 36, 36);
+}
+
+.item-mid{
+  font-weight: 900;
+}

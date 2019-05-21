@@ -1,0 +1,31 @@
+<view class="contain">
+<view class="wordd">请填写要修改的信息</view>
+
+<view class="inputitem">
+<view class="inputword">昵称</view>
+<input class="inputarea" bindinput='getnickname'></input>
+</view>
+
+<view class="inputitem">
+<view  class="inputword">年级</view>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="inputarea">
+      {{array[index]}}
+    </view>
+  </picker>
+</view>
+
+<view class="inputitem">
+<view  class="inputword">新密码</view>
+<input class="inputarea" password bindinput='getpsw' password></input>
+</view>
+
+<view class="wordd">请选择您的TAG</view>
+<view class="tagcontain">
+     <view wx:for="{{tagbag}}" class="tag {{item.beentap?'beentap':''}}" bindtap="taptag" data-id="{{index}}">{{item.name}}</view>
+</view>
+
+
+<button bindtap='modi' class="rigbotton">修改信息</button>
+
+</view>

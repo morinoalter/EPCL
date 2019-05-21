@@ -1,0 +1,11 @@
+<view class="contain">
+
+<view class="wordd">请选择shell风格</view>
+
+
+<view class="buttonred {{redtap?'act':''}}" bindtap='tap' data-id="red"> sendout </view>
+<view class="buttongreen {{greentap?'act':''}}" bindtap='tap' data-id="green"> sendout </view>
+<view class="buttonblue {{bluetap?'act':''}}"  bindtap='tap' data-id="blue"> sendout </view>
+<view class="buttonyellow {{yellowtap?'act':''}}" bindtap='tap' data-id="yellow"> sendout </view>
+
+</view>

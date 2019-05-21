@@ -1,0 +1,109 @@
+  <view class="top">
+    <view bindtap="activeNav" data-index="0"
+    class="tab {{deskIndex==0?'active':''}}">进行中</view>
+    <view bindtap="activeNav" data-index="1"
+     class="tab {{deskIndex==1?'active':''}}">所有任务</view>
+    <view bindtap="activeNav" data-index="2"
+     class="tab {{deskIndex==2?'active':''}}">已完成</view>
+  </view>
+  
+  <!--搜索栏-->
+  <view class='page_row'>  
+      <view class="search">  
+        <view class="df search_arr">  
+          <icon class="searchcion" size='20' type='search'></icon>  
+          <input class="" placeholder="请输入关键字" bindinput='getsv'/>  
+        </view>  
+      </view>  
+      <view class='sousuo' bindtap='sou'>搜索</view>  
+  </view>  
+
+  <swiper class="spages" current="{{currentIndex}}" bindchange='pageschange'
+  indicator-dots="{{false}}" >
+    <!--进行中-->
+    <swiper-item>
+        <scroll-view class='scroll'>
+            <block wx:if="{{missionlistsou.length==0}}">暂无任务</block>
+            <block wx:else>
+
+               <block wx:for="{{missionlistsou}}" wx:if="{{!item.complete}}" >
+                  
+                            
+                  <view class="boxx">
+                       <view class="listview {{item.complete?'comp':''}}" bindtap='makenotice' data-id="{{item.id}}" >
+                          
+                            <view class="item-mid">
+                              <view class="taskname">{{item.taskname}}</view>
+                              <view class="taskcoures">{{item.course}}  {{item.ddl}}</view>
+                            </view>
+                             <image class="list-item-icon" src="/icon/new.png"></image>
+                       </view>
+                  </view>
+                  
+               </block>
+            
+            </block>
+         </scroll-view>
+    </swiper-item>
+    
+    <!--所有任务-->
+    <swiper-item>
+         <scroll-view class='scroll'>
+            <block wx:if="{{missionlistsou.length==0}}">暂无任务</block>
+            <block wx:else>
+
+               <block wx:for="{{missionlistsou}}" >
+                  
+                            
+                  <view class="boxx">
+                       <view class="listview {{item.complete?'comp':''}}" bindtap='makenotice' data-id="{{item.id}}" >
+                          
+                            <view class="item-mid">
+                              <view class="taskname">{{item.taskname}}</view>
+                              <view class="taskcoures">{{item.course}}  {{item.ddl}}</view>
+                            </view>
+                             <image class="list-item-icon" src="/icon/new.png"></image>
+                       </view>
+                  </view>
+                  
+               </block>
+            
+            </block>
+         </scroll-view>
+    </swiper-item>
+    
+    <!--已完成-->
+    <swiper-item> 
+      <scroll-view class='scroll'>
+            <block wx:if="{{missionlistsou.length==0}}">暂无任务</block>
+            <block wx:else>
+
+               <block wx:for="{{missionlistsou}}" wx:if="{{item.complete}}" >
+                  
+                            
+                  <view class="boxx">
+                       <view class="listview {{item.complete?'comp':''}}" bindtap='makenotice' data-id="{{item.id}}" >
+                          
+                            <view class="item-mid">
+                              <view class="taskname">{{item.taskname}}</view>
+                              <view class="taskcoures">{{item.course}}  {{item.ddl}}</view>
+                            </view>
+                             <image class="list-item-icon" src="/icon/new.png"></image>
+                       </view>
+                  </view>
+                  
+               </block>
+            
+            </block>
+         </scroll-view>
+    </swiper-item>
+
+  </swiper>
+
+  
+  <modal hidden="{{modalhidden}}" title="{{noticetitle}}" 
+     no-cancel="true" bindconfirm="hidemodal">
+       <view class="notiword">所属课程：{{noticeclass}}</view>
+       <view class="notiword">截至时间：{{noticeddl}}</view>
+       <view class="notiword">任务内容：{{noticecontent}}</view> 
+</modal>

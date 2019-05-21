@@ -1,0 +1,197 @@
+  <scroll-view class="top" scroll-x="{{true}}">
+    <view bindtap="activeNav" data-index="0"
+    class="tab {{deskIndex==0?'active':''}}">全部新闻</view>
+
+    <view bindtap="activeNav" data-index="1"
+     class="tab {{deskIndex==1?'active':''}}">C++</view>
+
+     <view bindtap="activeNav" data-index="2"
+     class="tab {{deskIndex==2?'active':''}}">Java</view>
+
+     <view bindtap="activeNav" data-index="3"
+     class="tab {{deskIndex==3?'active':''}}">Python</view>
+
+     <view bindtap="activeNav" data-index="4"
+     class="tab {{deskIndex==4?'active':''}}">Javascript</view>
+
+     <view bindtap="activeNav" data-index="5"
+     class="tab {{deskIndex==5?'active':''}}">前端</view>
+
+     <view bindtap="activeNav" data-index="6"
+     class="tab {{deskIndex==6?'active':''}}">后端</view>
+
+     <view bindtap="activeNav" data-index="7"
+     class="tab {{deskIndex==7?'active':''}}">机器学习</view>
+  </scroll-view>
+
+<swiper class="spages" current="{{currentIndex}}" bindchange='pageschange'
+  indicator-dots="{{false}}" >
+  <!--第一页-->
+<swiper-item>
+<block wx:if="{{newscnt[0]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+  <!--第2页-->
+<swiper-item>
+<block wx:if="{{newscnt[1]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}" wx:if="{{item.toindex=='c1'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+  <!--第3页-->
+<swiper-item>
+<block wx:if="{{newscnt[2]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}" wx:if="{{item.toindex=='c2'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+  <!--第4页-->
+<swiper-item>
+<block wx:if="{{newscnt[3]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}" wx:if="{{item.toindex=='c3'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+  <!--第5页-->
+<swiper-item>
+<block wx:if="{{newscnt[4]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}" wx:if="{{item.toindex=='c4'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+  <!--第6页-->
+<swiper-item>
+<block wx:if="{{newscnt[5]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}" wx:if="{{item.toindex=='c5'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+  <!--第7页-->
+<swiper-item>
+<block wx:if="{{newscnt[6]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}" wx:if="{{item.toindex=='c6'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+  <!--第8页-->
+<swiper-item>
+<block wx:if="{{newscnt[7]==0}}">  
+  <view class="nonews">暂无新闻</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:calc(100vh - 80rpx);" scroll-y="{{true}}">  
+      <view class="boxx" wx:for="{{newslist}}" wx:id='index' bindtap="tonewspage" data-link="{{item.link}}">
+          <!--{{item.name}} {{item.time}} {{item.tag}}-->
+           <view class="newsclass {{item.toindex}}" wx:if="{{item.toindex=='c7'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.name}}</text>
+                <text class="list-item-time">{{item.time}} {{item.tag}}</text>
+             </view>
+             <image class="list-item-icon" src="/icon/new.png"></image>
+           </view>
+      </view>
+    </scroll-view>  
+</block>
+</swiper-item>
+
+ </swiper>

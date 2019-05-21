@@ -1,0 +1,12 @@
+<!--wxml-->
+<view class='itemView'>
+
+  <scroll-view  scroll-top="{{scolltop}}" scroll-y style="height:calc(100vh - 156rpx - 15px);font-size:xx-small;" >
+    <view class="textcont{{style}}" id="texx">
+    <text space="ensp" decode="{{true}} "> {{viewtext}}  </text>
+    </view>
+  </scroll-view>
+
+  <input placeholder-class="textcont{{style}}" class='input{{style}}' name='userName' placeholder='请输入指令' bindinput='commandChange'> </input>
+  <view hover-class="buttonh{{style}}" class='button{{style}}' name='sendout' bindtap='sendoutClick'> sendout </view>
+</view>

@@ -1,0 +1,24 @@
+<view class="title">
+   <view class="myimg">
+     <open-data type="userAvatarUrl"></open-data>
+   </view>
+   <view class="myinfo">
+         <view class="infoword">名称：{{usersname}}</view>
+         <view class="infoword">年级：{{usersgrad}}</view>
+         
+   </view>
+</view>
+
+<navigator class="tothepage" url='../userinfoChange/userinfoChange'>
+    <view class="word">修改信息</view>
+    <image class="ico" src="/icon/to.png" mode="aspectFit"></image>
+</navigator>
+<navigator class="tothepage" url='../shellSeting/shellSeting' style=" animation-duration: 2.25s;">
+    <view class="word">Shell设定</view>
+    <image class="ico" src="/icon/to.png" mode="aspectFit"></image>
+    
+</navigator>
+<navigator class="tothepage" url='../feedback/feedback' style=" animation-duration: 2.5s;">
+    <view class="word">数据绑定</view>
+    <image class="ico" src="/icon/to.png" mode="aspectFit"></image>
+</navigator>

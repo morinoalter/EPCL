@@ -1,0 +1,64 @@
+
+  <view class="top">
+    <view bindtap="activeNav" data-index="0"
+    class="tab {{deskIndex==0?'active':''}}">课程简介</view>
+    <view bindtap="activeNav" data-index="1"
+     class="tab {{deskIndex==1?'active':''}}">公告栏</view>
+  </view>
+
+  <swiper class="spages" current="{{currentIndex}}" bindchange='pageschange'
+  indicator-dots="{{false}}" >
+    <!--课程简介-->
+    <swiper-item>
+       <scroll-view class="scroll" scroll-y="{{true}}">
+          <view class="des">
+          <text decode="{{true}}" space="ensp" >{{classdescreption}}</text>
+          </view>  
+       </scroll-view>
+    </swiper-item>
+    
+    <!--公告栏-->
+    <swiper-item>
+         <scroll-view class='scroll' scroll-y="{{true}}">
+            <block wx:if="{{notice.length==0}}">
+               <view class="nonews">暂无公告</view>
+            </block>
+            <block wx:else>
+               <view wx:for="{{notice}}" wx:key="index" bindtap='makenotice' class="boxx" 
+                data-id="{{index}}">
+                   <!--{{index}} {{item.notice}}  {{item.time}} -->
+                  <view class="listview {{notice[index].hasread==true?'has':'no'}}">
+                    
+                    <block wx:if="{{notice[index].hasread==true}}">
+                         <view class="bord">
+                         <view class="hasreadicon"></view>
+                         </view>  
+                    </block>
+                    <block wx:else>
+                       <view class="bord">
+                         <view class="noreadicon">!</view>
+                       </view>  
+                    </block>
+
+                    <view class="item-mid">
+                      {{item.noticemini}}
+                    </view>
+
+                    <view class="item-right">
+                      {{item.time}}
+                    </view>
+                     
+                  </view>
+               </view>
+            </block>
+         </scroll-view>
+    </swiper-item>
+    
+    
+  </swiper>
+
+  <modal hidden="{{modalhidden}}" title="公告详情" 
+     no-cancel="true" bindconfirm="hidemodal">
+       <view style="font-size:13px;">发布时间:{{noticetime}}</view>
+       <view style="margin-top:10px;">{{noticecontent}}</view>
+    </modal>

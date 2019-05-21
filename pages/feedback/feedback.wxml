@@ -1,0 +1,15 @@
+<view class="wordd">请填写统一验证信息</view>
+
+
+<view class="inputitem">
+<view class="inputword">统一验证码</view>
+<input class="inputarea" bindinput='getusersname'></input>
+</view>
+
+<view class="inputitem">
+<view class="inputword">验证密码</view>
+<input class="inputarea" bindinput='getpsw'></input>
+</view>
+
+
+<button bindtap='binddata' class="rigbotton">绑定!</button>

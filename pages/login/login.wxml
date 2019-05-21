@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class="til">
+    <image class="pic1" mode="aspectFit" src="/icon/EPCL.png" />
+    <image class="pic2" mode="aspectFit" src="/icon/jiaoxue.png" />
+</view>
+
+
+<view class="contain">
+
+ <view class="inputitem {{userid_focus ? 'active' : ''}}">
+  <view class="inputword">用户名</view>
+  <input bindinput='getusersname' id="userid" placeholder='请输入用户名' bindfocus="inputFocus"      bindblur="inputBlur">
+  </input>
+ </view>
+
+ <view class="inputitem {{passwd_focus ? 'active' : ''}}">
+  <view class="inputword">密码</view>
+  <input bindinput='getpsw' password class="inputarea" id="passwd" placeholder='请输入密码' bindfocus="inputFocus" bindblur="inputBlur" ></input>
+
+ </view>
+
+ <button bindtap='tolog' class="rigbotton">登陆</button>
+ <button bindtap='toreg' class='rigbotton-white'>注册</button>
+
+</view>

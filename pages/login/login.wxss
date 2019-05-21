@@ -1,0 +1,95 @@
+.til{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pic1{
+    height: 100px;
+    animation: uppp 3s ease-in-out;
+}
+
+.pic2{
+   height: 60px;
+   opacity: 0;
+   animation: show 2s cubic-bezier(0.19, 1, 0.22, 1) 3s forwards;
+}
+
+@keyframes show{
+   0%{opacity: 0;}
+   100%{opacity: 1;}
+  }
+
+@keyframes uppp{
+   0%{opacity: 0;transform: translate3d(0,30vh,0);}
+   50%{opacity: 1;transform: translate3d(0,30vh,0);}
+   100%{opacity: 1;transform: translate3d(0,0,0);}
+}
+
+.contain{
+  transform: translate3d(0,100vh,0);opacity: 0;
+  animation: upp 3s cubic-bezier(0.19, 1, 0.22, 1) 3s forwards;
+}
+
+@keyframes upp{
+  0% {opacity: 0;transform: translate3d(0,100vh,0);}
+  50% {opacity: 1;}
+  100% {opacity: 1;transform: translate3d(0,0,0);}
+}
+
+.wordd{
+  font-size: 15px;
+  color: #888888;
+  margin-top:15px;
+  margin-left: 15px;
+}
+.inputitem{
+  display: flex;
+  align-items: center;
+  padding: 25rpx 10rpx;
+  margin: 40rpx 3%;
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid #f4f4f4;
+  transition: all .25s ease-in-out;
+}
+.inputitem.active {
+  border: 2px solid #7acfa6;
+}
+
+.inputword{
+  width: 64px;
+  color: #888;
+  font-size: 13pt;
+  height: 25rpx;
+  line-height: 25rpx;
+  padding: 0 25rpx;
+  border-right: 1px solid #d8d8d8; 
+
+}
+
+.inputarea{
+ margin-left: 5px;
+ 
+}
+
+.rigbotton{
+   font-size: 13pt;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #7acfa6;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 25rpx 3%;
+}
+
+.rigbotton-white{
+   font-size: 13pt;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #ffffff;
+  color: rgb(159, 219, 159);
+  text-align: center;
+  border-radius: 5px;
+  margin: 25rpx 3%;
+}

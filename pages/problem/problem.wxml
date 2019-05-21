@@ -1,0 +1,39 @@
+<!--pages/problem/problem.wxml-->
+<view class="contain">
+
+<view class="wordblock">
+    <view class="title">{{myproblem.name}}</view>
+</view>
+<view class="wordblock">
+    <view class="subtitle">题目描述</view>
+    <view class="words">{{myproblem.description}}</view>
+</view>
+
+<view class="wordblock">
+    <view class="subtitle">样例输入</view>
+    <view class="words">{{myproblem.sampleinput}}</view>
+
+</view>
+
+<view class="wordblock">
+    <view class="subtitle">样例输出</view>
+    <view class="words">{{myproblem.sampleoutput}}</view>
+
+</view>
+
+<view class="wordblock">
+    <view class="subtitle">我的提交</view>
+    <block wx:if="{{myproblem.code.length==0}}">
+        <view class="nosubmit">暂无提交</view>
+    </block>    
+    <block wx:elif="{{notshowcode}}">
+     <view class="tapcode" bindtap="showcode">点击查看代码</view>
+    </block>
+    <block wx:else>
+      <view class="codes">
+        <text space="emsp" decode="{{true}} ">{{myproblem.code}}</text>
+      </view>
+    </block>
+</view>
+
+</view>

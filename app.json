@@ -1,0 +1,57 @@
+{
+  "pages":[
+    
+    "pages/login/login",
+    "pages/mission/mission",
+    "pages/OJ/OJ",
+    "pages/news/news",
+    "pages/mainpage/mainpage",
+    "pages/regist/regist",
+    "pages/userinfo/userinfo",
+    "pages/classinfo/classinfo",
+    "pages/shellSeting/shellSeting",
+    "pages/userinfoChange/userinfoChange",
+    "pages/shell/shell",
+    "pages/feedback/feedback",
+    "pages/classpage/classpage",
+    "pages/newspage/newspage",
+    "pages/problem/problem"
+    
+  ],
+  "window":{
+    
+    "backgroundTextStyle":"dark",
+    "backgroundColor": "#409eff",
+    "navigationBarBackgroundColor": "#409eff",
+    "navigationBarTitleText": "教学管理系统",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar":{
+    "position":"bottom",
+    "backgroundColor":"black",
+    "list":[
+        {"text":"返回主页",
+         "pagePath":"pages/mainpage/mainpage",
+         "selectedColor": "#ff9900",
+         "color": "#000000"
+        },
+        {"text": "Shell",
+         "pagePath": "pages/shell/shell",
+         "iconPath":"icon/icon_shell.png",
+         "selectedColor": "#ff9900",
+        "color": "#000000"
+
+
+        },
+        {"text": "个人信息",
+         "pagePath": "pages/userinfo/userinfo",
+         "selectedColor": "#ff9900",
+         "color": "#000000"
+
+        }
+        
+    ]
+    
+  }
+}

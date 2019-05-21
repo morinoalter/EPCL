@@ -1,0 +1,112 @@
+
+
+<!--任务栏-->
+<view class="mission" >
+  <view class="bg1"> 
+       <view class="mymission">
+            <view class="kuang">
+            <view class="missonname">{{mission_now}}</view>
+            </view>
+            <view class="endtime">{{ddl}}</view>
+       </view>
+  </view>
+</view>
+
+<!-- 导航栏-->
+<view class="topage">
+
+    <block wx:if="{{hasband==false}}">
+      <view class="tobotton" bindtap='bindfirst'>
+        <view class="orangeblock" style='background-color:gray'>
+           <image class="toicon" src="/icon/kjs.png" mode="aspectFit" />
+        </view>
+        <view class="topageword" style='color:gray;'>任务列表</view>
+      </view>
+    </block>
+    <block wx:else>
+     <navigator class="tobotton" url="../mission/mission" >
+       <view class="orangeblock">
+        <image class="toicon" src="/icon/kjs.png" mode="aspectFit" />
+       </view>
+       <view class="topageword">任务列表</view>
+     </navigator>
+    </block>
+    
+
+   <block wx:if="{{hasband==false}}">
+      <view class="tobotton" bindtap='bindfirst'>
+        <view class="orangeblock" style='background-color:gray'>
+                <image class="toicon" src="/icon/ks.png" mode="aspectFit" />
+        </view>
+        <view class="topageword" style='color:gray;'>OJ</view>
+      </view>
+    </block>
+    <block wx:else>
+      <navigator class="tobotton" url="../OJ/OJ">
+       <view class="orangeblock">
+               <image class="toicon" src="/icon/ks.png" mode="aspectFit" />
+       </view>
+       <view class="topageword">OJ</view>
+     </navigator>
+    </block>
+    
+    <block wx:if="{{hasband==false}}">
+      <view class="tobotton" bindtap='bindfirst'>
+        <view class="orangeblock" style='background-color:gray'>
+          <image class="toicon" src="/icon/kb.png" mode="aspectFit" />
+        </view>
+        <view class="topageword" style='color:gray;'>课程信息</view>
+      </view>
+    </block>
+    <block wx:else>
+      <navigator class="tobotton" url="../classinfo/classinfo">
+       <view class="orangeblock">
+               <image class="toicon" src="/icon/kb.png" mode="aspectFit" />
+       </view>
+       <view class="topageword">课程信息</view>
+     </navigator>
+    </block>
+    
+    <block wx:if="{{hasband==false}}">
+      <view class="tobotton" bindtap='bindfirst'>
+        <view class="orangeblock" style='background-color:gray'>
+          <image class="toicon" src="/icon/jw@colour.png" mode="aspectFit" /></view>
+        <view class="topageword" style='color:gray;'>资讯快报</view>
+      </view>
+    </block>
+    <block wx:else>
+      <navigator class="tobotton" url="../news/news">
+       <view class="orangeblock">
+       <image class="toicon" src="/icon/jw@colour.png" mode="aspectFit" /></view>
+      
+       <view class="topageword">资讯快报</view>
+     </navigator>
+     </block>
+     
+</view>
+
+<view class="line2"></view>
+
+<!--动态-->
+<view class="contain">
+<view class="dong">同学动态</view>
+
+<scroll-view class="rollarea" 
+scroll-y="{{true}}" 
+scroll-with-animation="{{true}}"
+style="height:{{rollhight}}px;">
+ 
+  <block wx:if="{{hasband==false}}"><view class="nonews">请绑定账号后使用此功能</view></block>
+  <block wx:elif="classmate_msg.length==0"><view class="nonews">暂无动态</view></block>
+  <block wx:else>
+   <view style="display=flex;fiex-direction=column;align-item=center;">
+      <view wx:for="{{classmate_msg}}">
+           <view class="cmactive">{{item.username}}{{item.time}}{{item.dosomething}}</view>
+      </view>
+   </view>
+
+  </block>
+
+
+</scroll-view>
+</view>

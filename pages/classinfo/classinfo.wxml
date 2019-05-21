@@ -1,0 +1,49 @@
+<!--
+<scroll-view class="rollarea" 
+scroll-y="{{true}}" 
+scroll-with-animation="{{true}}"
+style="height:100vh;">
+ 
+  
+  <block wx:if="{{classinfo.length==0}}">暂无信息</block>
+  <block wx:else>
+   <view style="display=flex;fiex-direction=column;align-item=center;">
+      <view wx:for="{{classinfo}}">
+           <view class="cmactive" bindtap='toclasspage' data-link="{{item.id}}">
+            {{item.classname}} {{item.leader}} {{item.misnumber}}
+           </view>
+      </view>
+   </view>
+
+  </block>
+
+
+</scroll-view>
+-->
+<block wx:if="{{classinfo.length==0}}">  
+  <view class="nonews">暂无课程信息</view>
+</block>
+<block wx:else>
+    <scroll-view  style="height:100vh;">  
+      <view class="boxx" wx:for="{{classinfo}}" wx:id='index' bindtap="toclasspage" data-link="{{item.classid}}" data-name="{{item.classname}}" data-ind="{{index}}">
+          <!--{{item.classname}} {{item.leader}} {{item.misnumber}}-->
+           <view class="newsclass {{item.misnumber=='0'?'notnew':'new'}}">
+              <view class="list-item-left">
+                <text class="list-item-title">{{item.classname}}</text>
+                <text class="list-item-time">授课老师：{{item.teacher}}</text>
+              </view>
+              <!--右端标志-->
+              <block wx:if="{{item.misnumber=='0'}}">
+                <image class="list-item-icon" src="/icon/new.png"></image>
+              </block>
+              <block wx:else>
+                <view class="misnum">
+                  <view class="misnum1"> {{item.misnumber}}</view>
+                </view>  
+              </block> 
+
+           
+           </view>
+      </view>
+    </scroll-view>  
+</block>

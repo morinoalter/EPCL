@@ -1,0 +1,135 @@
+
+  <view class="top">
+    <view bindtap="activeNav" data-index="0"
+    class="tab {{deskIndex==0?'active':''}}">每日一题</view>
+    <view bindtap="activeNav" data-index="1"
+     class="tab {{deskIndex==1?'active':''}}">题库</view>
+    <view bindtap="activeNav" data-index="2"
+     class="tab {{deskIndex==2?'active':''}}">已完成</view>
+    <view bindtap="activeNav" data-index="3"
+     class="tab {{deskIndex==3?'active':''}}">排行榜</view>
+  </view>
+
+  <swiper class="spages" current="{{currentIndex}}" bindchange='pageschange'
+  indicator-dots="{{false}}" >
+    <!--每日一题-->
+    <swiper-item>
+       <scroll-view scroll-with-animation="{{true}}" class="scroll" scroll-y="{{true}}">
+       <view class="contain">
+         <view class="wordblock">
+    <view class="title">{{daylyquestion.name}}</view>
+</view>
+<view class="wordblock">
+    <view class="subtitle">题目描述</view>
+    <view class="words">{{daylyquestion.description}}</view>
+</view>
+
+<view class="wordblock">
+    <view class="subtitle">样例输入</view>
+    <view class="words">{{daylyquestion.sampleinput}}</view>
+
+</view>
+
+<view class="wordblock">
+    <view class="subtitle">样例输出</view>
+    <view class="words">{{daylyquestion.sampleoutput}}</view>
+
+</view>
+
+<view class="wordblock">
+    <view class="subtitle">我的提交</view>
+    <block wx:if="{{daylyquestion.code.length==0}}">
+        <view class="nosubmit">暂无提交</view>
+    </block>    
+    <block wx:elif="{{notshowcode}}">
+     <view class="tapcode" bindtap="showcode">点击查看代码</view>
+    </block>
+    <block wx:else>
+      <view class="codes">
+        <text space="emsp" decode="{{true}} ">{{daylyquestion.code}}</text>
+      </view>
+    </block>
+</view>
+</view>
+       </scroll-view>
+    </swiper-item>
+    
+    <!--题库-->
+    <swiper-item>
+         
+            <block wx:if="{{questionlist.length==0}}">暂无题目</block>
+            <block wx:else>
+               <scroll-view class='scroll'>
+               <block wx:for="{{questionlist}}" data-id="{{item.id}}" bindtap='toprogrampage'>
+                  <!-- id：{{item.id}}  name: {{item.name}}  comp: {{item.complete}} -->
+                  <view class="listview {{item.complete==='not Accepted'?'notA':''}}">
+
+                       <view class="queid {{item.complete==='not Accepted'?'notA':''}}">{{item.id}}</view>
+                       
+                       <view class="list-item-title">{{item.name}}</view>
+
+                       <block wx:if="{{item.complete==='not Accepted'}}">
+                         <view class="bord"><view class="nopassicon"></view></view>
+                       </block>
+                      <block wx:else>
+                          <view class="bord"><image class="list-item-icon" mode="aspectFit" src="/icon/gou.png" /></view>
+                      </block>
+
+                  </view>
+               </block>
+               </scroll-view>
+            </block>
+         
+    </swiper-item>
+    
+    <!--已完成-->
+    <swiper-item>
+       
+            <block wx:if="{{accnt==0}}"><view class="noque">暂无题目</view></block>
+            <block wx:else>
+               <scroll-view class='scroll'>
+               <block wx:for="{{questionlist}}" data-id="{{item.id}}" bindtap='toprogrampage'>
+                  <!-- id：{{item.id}}  name: {{item.name}}  comp: {{item.complete}} -->
+                  <view wx:if="{{!item.complete==='not Accepted'}}" class="listview">
+
+                       <view class="queid">{{item.id}}</view>
+                       <view class="list-item-title">{{item.name}}</view>
+                       <view class="bord"><image class="list-item-icon" mode="aspectFit" src="/icon/gou.png" /></view>
+
+                  </view>
+               </block>
+               </scroll-view>
+            </block>
+         
+    </swiper-item>
+    
+    <!--排行-->
+    <swiper-item>
+      
+            <block wx:if="{{ranklist.length==0}}">
+              <view>暂无信息</view>
+            </block>
+            <block wx:else>
+                <scroll-view class='scroll'>
+               <block wx:for="{{ranklist}}" data-id="{{item.id}}">
+
+                  <!--rank:{{item.rank}} name: {{item.nickname}}  comp: {{item.score}} -->
+                  <view class="boxx">
+                  <view class="rankview {{item.rank==1?'fir':item.rank==2?'sec':item.rank==3?'thir':''}}">
+                         <view class="bord">
+                            <view class="rank {{item.rank==1?'fir':''}}">{{item.rank}}</view>
+                         </view>
+                         <view class="rankname">{{item.nickname}}</view>
+                         <view class="bord"><view class="score">{{item.score}}</view></view>
+                 </view>     
+                 </view> 
+                 
+                           
+               </block>
+               </scroll-view>
+            </block>
+        
+    </swiper-item>
+
+  </swiper>
+

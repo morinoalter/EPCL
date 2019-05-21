@@ -1,0 +1,89 @@
+.wordd{
+    font-size: 15px;
+    color: #888888;
+    margin-top:15px;
+    margin-left: 15px;
+  }
+  .inputitem{
+    display: flex;
+    align-items: center;
+    padding: 25rpx 10rpx;
+    margin: 40rpx 3%;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid #f4f4f4;
+
+    box-shadow: 1px 2px 3px rgb(172, 172, 172);
+  }
+
+  .inputword{
+    width: 64px;
+    color: #888;
+    font-size: 13pt;
+    height: 25rpx;
+    line-height: 25rpx;
+    padding: 0 25rpx;
+    border-right: 1px solid #d8d8d8; 
+  
+  }
+  
+  .inputarea{
+   margin-left: 10rpx;
+    color: rgb(66, 66, 66);
+    font-size: 14pt;
+ 
+
+
+ 
+  }
+  
+  .rigbotton{
+     font-size: 13pt;
+    line-height: 85rpx;
+    height: 85rpx;
+    background: #7acfa6;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    margin: 50rpx 3%;
+  }
+
+  .tagcontain{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid #f4f4f4;
+
+    box-shadow: 1px 2px 3px rgb(172, 172, 172);
+
+  }
+  .tag{
+    margin: 5px;
+    color: #7acfa6;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    border:2px #7acfa6 solid;
+    transition: all .25s ease-in-out;
+  }
+  .tag.beentap{
+    background: #7acfa6;
+    color: white;
+  }
+
+  .contain{
+    animation: upp 3s cubic-bezier(0.19, 1, 0.22, 1)  forwards;
+  }
+  
+  @keyframes upp{
+    0% {opacity: 0;transform: translate3d(0,100vh,0);}
+    50% {opacity: 1;}
+    100% {opacity: 1;transform: translate3d(0,0,0);}
+  }
+  

@@ -1,0 +1,3 @@
+<!--pages/newspage/newspage.wxml-->
+<web-view src="{{weblink}}">
+</web-view>

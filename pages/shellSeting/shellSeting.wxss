@@ -1,0 +1,91 @@
+Page{
+    background: black;
+}
+
+.contain{
+    animation: upp 3s cubic-bezier(0.19, 1, 0.22, 1)  forwards;
+  }
+  
+  @keyframes upp{
+    0% {opacity: 0;transform: translate3d(0,100vh,0);}
+    50% {opacity: 1;}
+    100% {opacity: 1;transform: translate3d(0,0,0);}
+  }
+
+.buttonred.act{
+    background:rgb(255, 97, 97);
+    color: black;
+}
+.buttonred{
+   color:rgb(255, 97, 97);
+   border:2px rgb(255, 97, 97) solid;
+   margin: 20px 10px;
+   
+   font-size: 13pt;
+   line-height: 85rpx;
+   height: 85rpx;
+   text-align: center;
+   border-radius: 5px;
+   padding: 5px;
+ }
+
+  .wordd{
+    font-size: 15px;
+    color: white;
+    margin:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+
+.buttongreen.act{
+    background:greenyellow;
+    color: black;
+}
+.buttongreen{
+    margin: 20px 10px;
+    font-size: 13pt;
+    line-height: 85rpx;
+    height: 85rpx;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+   color:greenyellow;
+   border:2px greenyellow solid;
+ }
+
+ 
+.buttonblue.act{
+    background:#7CE4FF;
+    color: black;
+}
+.buttonblue{
+    margin: 20px 10px;
+    font-size: 13pt;
+    line-height: 85rpx;
+    height: 85rpx;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+   color:#7CE4FF;
+   border:2px #7CE4FF solid;
+ }
+
+ 
+.buttonyellow.act{
+    background:#FFD400;
+    color: black;
+}
+.buttonyellow{
+    margin: 20px 10px;
+    font-size: 13pt;
+    line-height: 85rpx;
+    height: 85rpx;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+   color:#FFD400;
+   border:2px #FFD400 solid;
+ }
