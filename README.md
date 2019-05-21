@@ -1,7 +1,8 @@
-# EPCL
 
 ![Image text](https://raw.githubusercontent.com/morinoalter/EPCL/master/icon/EPCL.png)
+
 ![Image text](https://raw.githubusercontent.com/morinoalter/EPCL/master/icon/jiaoxue.png)
+
 本项目是重庆大学srtp学生科研训练计划移动端程序辅助的实践教学方法项目的微信小程序端的源代码
 
 本小程序功能主要如下：
